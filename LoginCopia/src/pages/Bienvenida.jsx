@@ -76,7 +76,7 @@ export const Bienvenida = () => {
 
           variant="body2">
 
-          LOGIN 2
+          LOGIN 1
         </Link>
 
         <Button variant="contained" onClick={() => Desloggear()}>Salir</Button>

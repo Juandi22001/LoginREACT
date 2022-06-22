@@ -68,7 +68,7 @@ export const Login = () => {
         <div class="center">
             <div class="card2">
                 <Typography variant="h4" component="div" gutterBottom>
-                    LOGIN
+                    LOGIN 2
 
                 </Typography>
                 <div class="cards" >
