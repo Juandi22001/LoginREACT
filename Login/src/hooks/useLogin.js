@@ -11,7 +11,20 @@ export const useLogin = () => {
     return respuesta.data
   }
 
+  const CrearUsuario = async (Nombre, USER,Password,ConfirmarPassword,EDAD,Telefono) => {
+   
+
+    console.log(Nombre, USER,Password,ConfirmarPassword,EDAD,Telefono)
 
 
-  return { Login }
+    await axios.post('http://localhost:5000/addUser', {Nombre, USER,Password,ConfirmarPassword,EDAD,Telefono})
+      .then(response => {
+        console.log(response)
+      });
+
+  }
+
+
+
+  return { Login,CrearUsuario }
 }

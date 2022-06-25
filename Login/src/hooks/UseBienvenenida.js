@@ -25,7 +25,22 @@ export const useBienvenida = () => {
 
   }
 
+  const Mover = async () => {
 
 
-  return { Desloggear }
+
+
+
+       
+ 
+      
+    window.location.replace("http://localhost:3001");
+
+
+
+  }
+
+
+
+  return { Desloggear,Mover }
 }

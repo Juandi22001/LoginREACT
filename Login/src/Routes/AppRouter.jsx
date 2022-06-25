@@ -12,20 +12,20 @@ import { Bienvenida } from '../pages/Bienvenida';
 import { AuthRouter } from './AuthRouter';
 import { PrivateRoute } from './PrivateRouter';
 import { PublicRoute } from './PublicRouter';
-
+import { UserRouter } from './UserRouter';
 export const AppRouter = () => {
 
 
-    const { auth,verificarToken } = useContext(AuthContext);
+    const { auth, verificarToken } = useContext(AuthContext);
 
     useEffect(() => {
 
         verificarToken();
-       
+
 
     }, [verificarToken]);
 
-   
+
 
     return (
         <Router>
@@ -36,8 +36,12 @@ export const AppRouter = () => {
                         <Bienvenida />
                     </PublicRoute>
                 } />
-
-                {}
+                <Route path="/efe" element={
+                    <PublicRoute isAuthenticated={auth.logged}>
+                        <UserRouter />
+                    </PublicRoute>
+                } />
+                { }
                 <Route path="/auth/*" element={
                     <PrivateRoute isAuthenticated={auth.logged}>
                         <AuthRouter />
