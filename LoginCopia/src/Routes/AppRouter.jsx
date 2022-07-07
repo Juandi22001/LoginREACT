@@ -8,24 +8,24 @@ import {
 
 import { AuthContext } from '../Context/AuthContext';
 import { Bienvenida } from '../pages/Bienvenida';
-
+import { Rutas } from './Rutas';
 import { AuthRouter } from './AuthRouter';
 import { PrivateRoute } from './PrivateRouter';
 import { PublicRoute } from './PublicRouter';
-
+import { UserRouter } from './UserRouter';
 export const AppRouter = () => {
 
 
-    const { auth,verificarToken } = useContext(AuthContext);
+    const { auth, verificarToken } = useContext(AuthContext);
 
     useEffect(() => {
 
         verificarToken();
-       
+
 
     }, [verificarToken]);
 
-   
+
 
     return (
         <Router>
@@ -33,11 +33,10 @@ export const AppRouter = () => {
 
                 <Route path="/" element={
                     <PublicRoute isAuthenticated={auth.logged}>
-                        <Bienvenida />
+                        <Rutas />
                     </PublicRoute>
                 } />
-
-                {}
+               
                 <Route path="/auth/*" element={
                     <PrivateRoute isAuthenticated={auth.logged}>
                         <AuthRouter />

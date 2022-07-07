@@ -100,3 +100,40 @@ li a:hover {
   padding: 10px;
   }
   
+  .imagen {
+    object-fit: cover;
+    width: 150px;
+    height:  50px;
+    padding: 0px;
+    margin: 00px;
+
+}
+
+
+body {
+  background-color: #faf0f0;
+
+ }
+
+ .butonVERDE{
+
+  background-color: #7FBC5B;
+ }
+
+ .tarjeta {
+
+  max-width: 250px;
+  margin: auto;
+    display: grid;
+  grid-template-columns: repeat( minmax(800px, 1fr));
+  grid-gap: 70px;
+
+  font-family: arial;
+}
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+
+
+}

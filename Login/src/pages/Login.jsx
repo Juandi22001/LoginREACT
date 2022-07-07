@@ -102,7 +102,7 @@ export const Login = () => {
 
             <Grid.Container gap={1} justify="center" align="center" bordered={2}>
 
-                <Image src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/portal.png?raw=true" width={500}
+                <Image src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/asignaciones.png?raw=true" width={500}
                     height={200} alt="efe?" />
                 <Row justify="center" align="center">
 

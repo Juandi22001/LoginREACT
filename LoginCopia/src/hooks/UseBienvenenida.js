@@ -25,7 +25,81 @@ export const useBienvenida = () => {
 
   }
 
+  const Mover = async () => {
 
 
-  return { Desloggear }
+
+
+
+       
+ 
+      
+    window.location.replace("http://localhost:3000");
+
+
+
+  }
+  
+  const MoverPagos = async () => {
+
+
+
+
+
+       
+ 
+      
+    window.location.replace("http://localhost:3003");
+
+
+
+  }
+
+  
+  const MoverAdmisiones = async () => {
+
+
+
+
+
+       
+ 
+      
+    window.location.replace("http://localhost:3002");
+
+
+
+  }
+  
+  const MoverDesAsignacion = async () => {
+
+
+
+
+
+       
+ 
+      
+    window.location.replace("http://localhost:3004");
+
+
+
+  }
+
+  
+  const MoverActas = async () => {
+
+
+
+
+
+       
+ 
+      
+    window.location.replace("http://localhost:3005");
+
+
+
+  }
+  return { Desloggear,Mover ,MoverAdmisiones,MoverPagos,MoverDesAsignacion,MoverActas}
 }
