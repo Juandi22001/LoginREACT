@@ -133,7 +133,9 @@ function set() {
 
 <Card.Header >
 <Card.Image
-  src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/LogoPortal1.png?raw=true" 
+
+
+src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/LogoPortal3.png?raw=true" 
 
    alt="efe?"   
         
