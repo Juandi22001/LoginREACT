@@ -6,14 +6,16 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import { Input, Grid, Row, Button, Text, Link, Modal, useModal, Spacer } from "@nextui-org/react";
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
+import PersonIcon from '@mui/icons-material/Person';
 import Container from '@mui/material/Container';
-
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { blue } from '@mui/material/colors';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Lista } from './Lista';
 import { Image } from "@nextui-org/react";
 
+import Swal from 'sweetalert2'
 const Barra = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -33,24 +35,45 @@ const Barra = () => {
     setAnchorElUser(null);
   };
   const Salir = () => {
+    Swal.fire({
+        title: '¿Desea Salir del sistema?',
+        text: " ya no podra regresar",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si salir'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Salir',
+            'Usted esta saliendo del sistema.',
+            'success'
+
+            
+          )
+          Desloggear()
+        }
     
- 
-    Desloggear()
-  };
+      })
+  
+};
   const IrSistema1 = () => {
     Mover()
   };
+  const primary = blue[50]; // #f44336
   return (
-    <AppBar position="static">
-      <Container maxWidth="20px">
+    <div class="Barra">
+    <AppBar position="static" color="primary" >
+        
         <Toolbar disableGutters>
             
-          <Box >
+        <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: '1' } }}>
     
-        <Image src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/logoVista2.png?raw=true" width={0} margin-left={200} maxDelay={500} height={150} alt="efe?" />
+        <Image src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/logoGeneral.png?raw=true" width={0} margin-left={200} maxDelay={500} height={150} alt="efe?" />
 
         </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 0.5, display: { xs: 'flex', md: 'none' } }}>
     
          
             <Menu
@@ -80,7 +103,7 @@ const Barra = () => {
                 
           <Text
                   h1
-                  size={35}
+                  size={45}
                   css={{
                     textGradient: "45deg, $white -20%, $white 100%",
                   }}
@@ -91,18 +114,19 @@ const Barra = () => {
                 </MenuItem>
           </Box>
 
-          <Box sx={{ flexGrow: 1 }}>
-            <Tooltip title="Open settings">
+      
+          <Box sx={{ flexGrow: 0.05 }}   >
+            <Tooltip title="abrir opciones">
               <IconButton size="large"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit" onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <MenuIcon />
+          color="primary" onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <PersonIcon fontSize="large" sx={{ fontSize: 90, color: blue[50] }}    />
               </IconButton>
             </Tooltip>
             <Menu
-                color='primary'
+               
               sx={{ mt: '80px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -117,15 +141,44 @@ const Barra = () => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}>
-              <MenuItem >
+              <MenuItem sx={{ flexGrow: 0,bgcolor: 'background.paper'  }} >
              
               <Lista></Lista>
             </MenuItem>
             </Menu>
           </Box>
+
+
+          <Box sx={{ flexGrow: 0.001 }}   >
+         
+          <MenuItem onClick={() => Salir()} >
+          <Grid > 
+          <ExitToAppIcon fontSize="large" sx={{ fontSize: 70, color: blue[50] }}    />
+          </Grid>
+          <Grid xs={3} sm={5} borderWeights={2}> 
+          <Text
+                  h1
+                  size={25}
+                  css={{
+                    textGradient: "45deg, $white -20%, $white 100%",
+                  }}
+                  weight="bold"
+                >
+                Salir
+                </Text>
+                </Grid>
+         </MenuItem>
+     
+          </Box>
+
+
+
         </Toolbar>
-      </Container>
+     
     </AppBar>
+    </div>
   );
 };
 export default Barra;
+
+            

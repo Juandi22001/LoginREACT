@@ -40,16 +40,17 @@ export default function TarjetaPagos() {
 
     });
     return (
-        <div >
+        <div class="" >
             
-        <Card isPressable  css={{ p: "$6", mw: "400px" }}>
+       
+            <Card isPressable  css={{ p: "$8", mw: "400px" }} color="primary">
                 <Card.Header >
                     <Text
                         h1
                         
                         size={50}
                         css={{
-                            width: '900px',textGradient: "45deg, $blue600 -20%, $blue600 100%",
+                            width: '900px',textGradient: "45deg, black -20%, black 100%",
                         }}
                         weight="bold"
                     >
@@ -67,7 +68,7 @@ export default function TarjetaPagos() {
                 <Card.Body css={{ p: 5, justifyItems: "flex-start" }}>
 
                     <Row wrap="wrap" justify="space-between" align="center">
-                        <Text css={{ lineHeight: "$xs", color: "$blue400" }}>
+                        <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
                             Portal designado para poder realizar todos los pagos pendientes ,  que posee como usuario
                         </Text>
 
@@ -80,7 +81,7 @@ export default function TarjetaPagos() {
 
                 </Card.Body>
                 <Card.Footer css={{ justifyItems: "flex-start" }}>
-                <Button onClick={() => MoverPagos()} >Ir al portal de pagos</Button>
+                <Button color="primary" onClick={() => MoverPagos()} >Ir al portal de pagos</Button>
                 </Card.Footer>
             </Card>
 

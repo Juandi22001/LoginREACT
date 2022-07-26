@@ -43,13 +43,14 @@ export default function TarjetaDesAsignaciones() {
 
     return (
         <div >
-   <Card isPressable  css={{ p: "$8", mw: "405px" }}>
+  
+  <Card isPressable  css={{ p: "$10", mw: "405px" }}>
              <Card.Header >
                     <Text
                         h1
                         size={35}
                         css={{
-                            width: '900px',   textGradient: "45deg, $blue600 -20%, $blue600 100%",
+                            width: '1000px',   textGradient: "45deg, black -20%, black 100%",
                         }}
                         weight="bold"
                     >
@@ -65,7 +66,7 @@ export default function TarjetaDesAsignaciones() {
                 <Row wrap="wrap" justify="space-between" align="center">
                          
 
-                            <Text css={{ lineHeight: "$xs", color: "$blue400" }}>
+                            <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
                                 Realiza aquí tu proceso 
                                 de desasignación en línea
                             </Text>
@@ -78,7 +79,7 @@ export default function TarjetaDesAsignaciones() {
 
                 </Card.Body>
                 <Card.Footer css={{ justifyItems: "flex-start" }}>
-                <Button onClick={() => MoverDesAsignacion()} >IR</Button>
+                <Button onClick={() => MoverDesAsignacion()} >Ir a Portal Desasignación</Button>
                 </Card.Footer>
             </Card>
 

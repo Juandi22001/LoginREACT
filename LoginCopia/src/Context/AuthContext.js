@@ -157,8 +157,6 @@ function AuthProvider({ children }) {
 
 
 
-
-
    
 
             setauth({
@@ -202,15 +200,13 @@ function AuthProvider({ children }) {
 
     const Usuario = (e) => {
 
-
-
-
     }
 
 
 
 
     const verificarToken = useCallback(async () => {
+
 
         const token = localStorage.getItem('token');
 
@@ -236,12 +232,12 @@ function AuthProvider({ children }) {
 
 
         if (resp.ok) {
-            console.log("respuesta",resp.element.Estudiante,"catedratico",resp.element.Profesor,"egresado",resp.element.Egresado)
+       
          
 
             if(alv.length===0){
             if (resp.element.Estudiante && resp.element.Profesor&& resp.element.Egresado) {
-                console.log("primer if")
+               
                 const pestañaUnica = {
 
                     "nombre": "Estudiante", "valor": "2"
@@ -363,8 +359,7 @@ function AuthProvider({ children }) {
 
         }
     }
-            console.log("alvvvv",alv)
-
+         
             setauth({
                
                 checking: false,
@@ -528,7 +523,7 @@ function AuthProvider({ children }) {
                 roles: alv
                
 
-
+ 
 
             });
 

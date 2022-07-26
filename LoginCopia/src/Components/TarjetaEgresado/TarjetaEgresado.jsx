@@ -94,7 +94,7 @@ export const TarjetaEgresado = () => {
 
 
 
-
+|
 
 
                             <Grid xs={8} sm={6}>
@@ -133,7 +133,11 @@ export const TarjetaEgresado = () => {
             <Grid xs={2}>
                 <Pagination name="vista" id="vista" onChange={setvista} value={vista} x color={"primary"} total={5} />
             </Grid>
+            <footer>
 
+
+           
+</footer>
         </div>
 
 

@@ -55,9 +55,7 @@ export const TarjetaCatedratico = () => {
             {vista === 1 ?
 
                 <>
-
-                    <Grid.Container gap={2} justify="flex-start">
-
+                    <div class="cards">
 
 
 
@@ -96,6 +94,17 @@ export const TarjetaCatedratico = () => {
 
 
 
+                   
+
+                        <Grid xs={8} sm={6}>
+                            <TarjetaTramites></TarjetaTramites>
+
+                        </Grid>
+
+
+
+
+
                         <Grid xs={8} sm={4}>
 
 
@@ -110,9 +119,7 @@ export const TarjetaCatedratico = () => {
 
 
 
-
-
-                    </Grid.Container>
+                    </div>
                 </>
 
                 : (<h3> </h3>)}
@@ -152,7 +159,11 @@ export const TarjetaCatedratico = () => {
             <Grid xs={2}>
                 <Pagination name="vista" id="vista" onChange={setvista} value={vista} x color={"primary"} total={5} />
             </Grid>
+            <footer>
 
+
+           
+</footer>
         </div>
 
 

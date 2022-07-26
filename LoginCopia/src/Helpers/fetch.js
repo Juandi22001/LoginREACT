@@ -6,6 +6,8 @@ export const Fetch_sin_Token = async (endpoint, data, method = 'GET') => {
     if (method === 'GET') {
         const resp = await fetch(url);
 
+
+
         return await resp.json()
 
     }
@@ -38,7 +40,7 @@ export const FetchPostSesion = async (endpoint, data, method = 'GET') => {
         return await resp.json()
 
     }
-    else {
+    else { 
 
         const resp = await fetch(url, {
             method,
@@ -64,6 +66,8 @@ export const FetchSesion = async (endpoint, method = 'GET') => {
     
     if (method === 'GET') {
         const resp = await fetch(url);
+
+        console.log("respuesta",resp)
        
         return await resp.json()
 
@@ -78,10 +82,9 @@ export const FetchToken = async (endpoint, method = 'GET') => {
 
 
 
-    const token = localStorage.getItem('token');
 
     const pruebaToken= await FetchSesion('Sesion','GET')
-    console.log("PRUEBA TOKEN",pruebaToken)
+  
 
     const url = 'http://localhost:5000/' + endpoint
 

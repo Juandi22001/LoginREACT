@@ -9,9 +9,8 @@ import { useBienvenida } from '../../hooks/UseBienvenenida';
 import TarjetaAdmisiones from "./TarjetaAdmisiones";
 
 import TarjetaDesAsignaciones from "./TarjetaDesAsignaciones";
-
+import BarDown from "../BarDown";
 export const TarjetasEstudiantes = () => {
-
 
     const { auth } = useContext(AuthContext)
     const { setVisible, bindings } = useModal();
@@ -41,7 +40,7 @@ export const TarjetasEstudiantes = () => {
 
     useEffect(() => {
         console.log("pagina", values.pagina)
-
+  
 
 
     });
@@ -53,16 +52,12 @@ export const TarjetasEstudiantes = () => {
             {
 
                 vista === 1 ?
-                    <>
-                        <Grid.Container value={vista} gap={2} justify="flex-start">
+                    <>       <div  class="cards">
+                        
 
 
-
-
-
-
-
-                            <Grid xs={8} sm={6}>
+                 
+                        <Grid xs={8} sm={6}>
 
 
                             <TarjetaPagos></TarjetaPagos>
@@ -88,7 +83,10 @@ export const TarjetasEstudiantes = () => {
 
                             </Grid>
 
+
+
                             <Grid xs={8} sm={6}>
+
 
                                 <TarjetaAdmisiones></TarjetaAdmisiones>
 
@@ -102,7 +100,11 @@ export const TarjetasEstudiantes = () => {
 
 
 
+
+
+                 
                             <Grid xs={8} sm={6}>
+
 
                                 <TarjetaDesAsignaciones></TarjetaDesAsignaciones>
 
@@ -121,8 +123,7 @@ export const TarjetasEstudiantes = () => {
 
 
 
-                        </Grid.Container>
-
+                        </div>
                     </>
 
                     :
@@ -176,7 +177,11 @@ export const TarjetasEstudiantes = () => {
             <Grid xs={2}>
                 <Pagination name="vista" id="vista" onChange={setvista} value={vista} x color={"primary"} total={5} />
             </Grid>
+            <footer>
 
+
+           
+            </footer>
         </div>
 
 

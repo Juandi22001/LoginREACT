@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 import './TarjetaEstudiante.css'
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import BarDown from "../BarDown";
 import { useBienvenida } from "../../hooks/UseBienvenenida";
 export default function Tarjeta() {
     const { auth } = useContext(AuthContext)
@@ -38,51 +39,51 @@ export default function Tarjeta() {
     });
     return (
         <div >
-    
-                <Card isPressable  css={{ p: "$6", mw: "400px" }} onClick={() => Mover()} >
-                    <Card.Header >
 
-                        <Text
-                            h1
-                            size={40}
-                            css={{
-                                width: '900px', textGradient: "45deg, $blue600 -20%, $blue600 100%",
-                            }}
-                            weight="bold"
-                        >
-                            Asignaciones
+
+<Card isPressable  css={{ p: "$8", mw: "400px" }}onClick={() => Mover()} >
+                <Card.Header >
+
+                    <Text
+                        h1
+                        size={40}
+                        css={{
+                            width: '1000px', textGradient: "45deg, black -20%,  black 100%",
+                        }}
+                        weight="bold"
+                    >
+                        Asignaciones
+                    </Text>
+                    <Grid xs={15} justify='center' align="center">
+                        <BorderColorIcon fontSize="large" color="primary" sx={{ fontSize: 65 }} />
+                    </Grid>
+
+                 
+
+                </Card.Header>
+                
+                <Card.Body css={{ p: 5, justifyItems: "flex-start" }}>
+                      <Row wrap="wrap" justify="space-between" align="center">
+
+
+                        <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
+                            Realiza la asignación de  los  cursos que desees asignarte
                         </Text>
-                        <Grid xs={15} justify='center' align="center">
-                            <BorderColorIcon fontSize="large" color="primary" sx={{ fontSize: 65 }} />
-                        </Grid>
 
 
-
-                    </Card.Header>
-                    <Card.Body css={{ p: 5 ,justifyItems: "flex-start" }}>
-                    <Row wrap="wrap" justify="space-between" align="center">
-                         
-
-                                <Text css={{ lineHeight: "$xs", color: "$blue400" }}>
-                                    Realiza la asignación de  los  cursos que desees asignarte
-                                </Text>
-                          
-
-                            <Spacer y={1} />
+                        <Spacer y={1} />
 
 
-                            </Row>
+                    </Row>
 
 
-                    </Card.Body>
+                </Card.Body>
 
-                    <Card.Footer css={{ justifyItems: "flex-start" }}>
+                <Card.Footer css={{ justifyItems: "flex-start" }}>
                     <Button onClick={() => Mover()} >Ir a Portal Asignaciones</Button>
-                    </Card.Footer>
-                </Card>
+                </Card.Footer>
+            </Card>
 
-         
-         
 
         </div>
     );

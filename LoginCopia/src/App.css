@@ -49,25 +49,27 @@
   text-align: center;
   font-family: arial;
 }
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-      display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 50px;
-  
 
-    text-align: center;
-    font-family: arial;
-  }
-  .cards {
+.card {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
-  
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 50px;
+
+
+  text-align: center;
+  font-family: arial;
+}
+.cards {
+
+  grid-template-columns: repeat(auto-fill, minmax(400px, 20fr));
+  grid-gap: 10px;
+
 
 }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -99,7 +101,19 @@ li a:hover {
  
   padding: 10px;
   }
-  
+
+
+
+  .centerCard {
+    margin: 8rem;
+    padding: 4rem;
+
+    /* IMPORTANTE */
+    text-align: center;
+    }
+
+
+
   .imagen {
     object-fit: cover;
     width: 150px;
@@ -108,12 +122,101 @@ li a:hover {
     margin: 00px;
 
 }
+.MenuPortal {
+  height: auto; width: 97%;
+/*importante*/
+min-height:10vh;
 
+}
+.Barra {
+  
+  height: auto; width: 103%;
 
-body {
-  background-color: #faf0f0;
+}
+footer{
+
+	position: relative;
+	width: 110%;
+	margin-bottom: -1px;
+	margin-left: -10px;
+	margin-right: -10px;
+	height: 50px;
+	bottom: 20;
 
  }
+ 
+
+.BarraDown {
+
+  top: 0;
+  width:100%;
+
+  /*opacity: 0.8;
+ 
+  filter:  alpha(opacity=90);
+*/
+
+}
+
+
+.cardsDown {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+
+
+}
+.Contenedor{
+
+  height: 0;
+}
+body { 
+  background-color: #f9feff;
+  margin: 0;
+
+  position: relative;
+
+  margin-bottom: 40px;
+
+  overflow-x:hidden;
+
+
+}
+
+
+
+
+  .Fondoportal{
+    background-image: url("https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/FondoPortal1.png?raw=true");
+  
+     background-color: #e0edf0;
+     overflow: hidden;
+     background-position: center left;
+   
+     background-size: cover;
+     width:100vw;
+     height:100vh;
+     overflow-y:hidden;
+    
+  }
+
+
+ 
+
+.bienvenida {
+  background-color: #00862A;
+  overflow: hidden;
+
+  background-image: url("https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/FondoPortal.gif?raw=true");
+  background-position: center center;
+  height: 0vw;
+  overflow-y:hidden;
+  background-size: cover;
+  width:100vw;
+  height: 100vh;}
+
+
 
  .butonVERDE{
 

@@ -48,7 +48,7 @@ export default function SubirActas() {
                             h1
                             size={50}
                             css={{
-                                width: '900px', textGradient: "45deg, $blue600 -20%, $blue600 100%",
+                                width: '900px', textGradient: "45deg, black -20%, black 100%",
                             }}
                             weight="bold"
                         >
@@ -65,7 +65,7 @@ export default function SubirActas() {
                     <Row wrap="wrap" justify="space-between" align="center">
                          
 
-                                <Text css={{ lineHeight: "$xs", color: "$blue400" }}>
+                                <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
                                     Subir actas de los cursos asignados que tengas de una manera tranquila 
                                 </Text>
                           

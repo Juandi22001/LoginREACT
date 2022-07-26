@@ -49,7 +49,7 @@ export default function TarjetaTramites() {
                         h1
                         size={45}
                         css={{
-                            width: '900px',   textGradient: "45deg, $blue600 -20%, $blue600 100%",
+                            width: '900px',   textGradient: "45deg, black -20%, black 100%",
                         }}
                         weight="bold"
                     >
@@ -67,7 +67,7 @@ export default function TarjetaTramites() {
 
                 <Card.Body css={{ p: 5, justifyItems: "flex-start" }}>
                     <Row wrap="wrap" justify="space-between" align="center">
-                        <Text css={{ lineHeight: "$xs", color: "$blue400" }}>
+                        <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
                             Realiza todos tus tramites pendientes de una manera segura
                         </Text>
 

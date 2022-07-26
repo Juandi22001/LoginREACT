@@ -1,5 +1,5 @@
 import { useForm } from "../hooks/useForm";
-import { Pestaña } from "../hooks/UsePestaña";
+import Tooltip from '@mui/material/Tooltip';
 import { TarjetaCatedratico } from "../Components/TarjetaCatedratico/TarjetaCatedratico";
 import { TarjetasEstudiantes } from "../Components/TarjetasEstudiante/TarjetasEstudiantes";
 import { Input, Grid, Row, Button, Text, Link, Modal, useModal, Spacer } from "@nextui-org/react";
@@ -13,15 +13,18 @@ import TabPanel from '@mui/lab/TabPanel';
 import { useBienvenida } from '../hooks/UseBienvenenida';
 import { TarjetaEgresado } from "../Components/TarjetaEgresado/TarjetaEgresado";
 import Barra from "../Components/AppBar";
+import BarDown from "../Components/BarDown";
 
 import { blue } from '@mui/material/colors';
 export const Bienvenida = () => {
 
 
   const [pestañasTotales, setPestañasTotales] = useState([])
-  const { auth } = useContext(AuthContext) 
+  const { auth } = useContext(AuthContext)
 
   const [cargarPestaña,] = useState(false)
+
+  const [bienvenida, setBienvenida] = useState(false)
 
   //  const {LLenarPestaña, pestañasTotales } = Pestaña()
   const [value, setValue] = useState('1');
@@ -40,7 +43,7 @@ export const Bienvenida = () => {
 
     pagina: 0,
 
-    ruta: '',
+    ruta: ''
 
 
 
@@ -53,117 +56,49 @@ export const Bienvenida = () => {
   });
   useEffect(() => {
 
-    
 
-    LLenarPestaña()
-  //  console.log(auth.roles)
+    console.log(auth.element)
+    setInterval(set, 500);
 
-    
+
+    //  console.log(auth.roles)
+
+
     console.log("PESTAÑAS", pestañasTotales)
   }, [cargarPestaña]);
 
-  const LlenarEstudiante = () => {
-
-    if (auth.Estudiante == true) {
-
-      const pestañaUnica = {
-
-        "nombre": "Estudiante", "valor": "2"
-      }
-
-      pestañas.push(pestañaUnica)
-
-
-
-
-
-
-
-    }
-
-
-
-  }
-  const LLenarCatedratico = () => {
-    if (auth.Catedratico == true) {
-      const pestañaUnica = {
-
-        "nombre": "Catedratico", "valor": "3"
-      }
-
-      pestañas.push(pestañaUnica)
-
-
-
-
-
-
-
-    }
+  function set() {
+    setBienvenida(true)
 
 
   }
 
 
-  const LLenarEgresado = () => {
-    if (auth.Egresado == true) {
-      const pestañaUnica = {
-
-        "nombre": "Egresado", "valor": "4"
-      }
-
-      pestañas.push(pestañaUnica)
-
-
-
-
-
-
-
-    }
-
-
-  }
-  const LLenarPestaña = () => {
-
-    setPestañasTotales([])
-    LlenarEstudiante()
-
-    LLenarCatedratico()
-    LLenarEgresado()
-    setPestañasTotales(pestañas)
-    pestañas = []
-
-
-  }
 
   return (
-    <div >
 
+    <div class="MenuPortal" >
       <Barra></Barra>
-
- 
       <Grid.Container gap={1} justify="flex-start">
-      <Grid xs={2} sm={4}>
-        </Grid>
-
-        <Grid xs={12} sm={11.5} align="center">
+     
+      
+        <Grid xs={12} sm={12} align="center">
 
           <Box sx={{
-            width: '2050px',padding: '10px',
-            height: 2000, typography: 'body1'
+            width: '2000px', padding: '20px',
+            height: 800, typography: 'body1'
           }}>
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <TabList 
-                
-                sx={{
-                  width: '360px',padding: '10px',
-                  height: 0, typography: 'body1',margin: 'auto'
-                }}
-                
-                
-                onChange={handleChange} aria-label="lab API tabs example">
+                <TabList
+
+                  sx={{
+                    width: '360px', padding: '10px',
+                    height: 0, typography: 'body1', margin: 'auto'
+                  }}
+
+
+                  onChange={handleChange} aria-label="lab API tabs example">
 
                   {
 
@@ -173,7 +108,11 @@ export const Bienvenida = () => {
 
 
 
-                      <Tab label={item.nombre} value={item.valor} />
+                      <Tab label={item.nombre} value={item.valor}
+
+
+
+                      />
 
 
 
@@ -184,7 +123,7 @@ export const Bienvenida = () => {
 
                   }
 
-      
+
 
                 </TabList>
               </Box>
@@ -197,94 +136,111 @@ export const Bienvenida = () => {
                 weight="bold"
               >
                 Escoja la opcion que desee
+                
               </Text></TabPanel>
-              <TabPanel value="2">   <TarjetasEstudiantes></TarjetasEstudiantes>
+
+
+              <TabPanel value="2">  
+              
+              
+               <TarjetasEstudiantes></TarjetasEstudiantes>   
+              <div class="ContFooter">  
+        <Grid  xs={12}  sm={24} align="center">
+          
+
+
+
+          
+        <footer>
+
+        <BarDown></BarDown>
+
+
+        </footer>
+        
+
+</Grid>
+</div>  
               </TabPanel>
-              <TabPanel value="3">       <TarjetaCatedratico></TarjetaCatedratico></TabPanel>
-              <TabPanel value="4"> <TarjetaEgresado></TarjetaEgresado></TabPanel>
+              <TabPanel value="3">          
+               <TarjetaCatedratico></TarjetaCatedratico>   
+              <div class="ContFooter">  
+        <Grid  xs={12}  sm={24} align="center">
+          
+
+
+
+          
+        <footer>
+
+        <BarDown></BarDown>
+
+
+        </footer>
+        
+
+</Grid>
+</div>  
+              
+               </TabPanel> 
+              <TabPanel value="4"> 
+                
+              <TarjetaEgresado></TarjetaEgresado>   
+              <div class="ContFooter">  
+        <Grid  xs={12}  sm={24} align="center">
+          
+
+
+
+          
+        <footer>
+
+        <BarDown></BarDown>
+
+
+        </footer>
+        
+
+</Grid>
+</div>   
+        
+              
+              
+               </TabPanel>
             </TabContext>
+          
           </Box>
-
+      
         </Grid>
-
-
+    
+    
       </Grid.Container>
-    </div>
+  
 
 
-
-  )
+    </div>)
 }
-/*
-
-        <Modal
-          scroll
-          width="600px"
-          aria-labelledby="modal-title"
-          aria-describedby="modal-description"
-          {...bindings}
-        >
-          <Modal.Header>
-
-
-            <Text
-              h1
-              size={140}
-              css={{
-                textGradient: "45deg, $green600 -20%, $green600 100%",
-              }}
-              weight="bold"
-            >
-              {auth.Nombre}
-            </Text>
-
-          </Modal.Header>
-          <Modal.Body align="center">
-
-
-            <Row justify='center' align="center">
-              <Text color="success" id="modal-title" size={18}>
-                Edad                 :
-              </Text>
-
-              <Text color="success" id="modal-title" size={18}>
-
-                {auth.Edad}
-              </Text>
-            </Row>
-            <Row justify='center' align="center">
-              <Text color="success" id="modal-title" size={18}>
-                Telefono                      :
-              </Text>
-              <Text color="success" id="modal-title" size={18}>
-                {auth.Telefono}
-              </Text>
-            </Row>
-          </Modal.Body>
-          <Modal.Footer>
-
-            <Button auto ghost color="success" onClick={() => setVisible(false)}>
-              Ok
-            </Button>
-          </Modal.Footer>
-        </Modal>
-
-
-
-        <Grid xs={6}>
 
 
 
 
+/* 
+<div class="body" >
+
+
+
+{bienvenida === false ?
+
+<>
+<div class="body" >
 
 
 
 
+</div>
 
+</>
 
+: (  <div > <Barra></Barra>
 
-        </Grid>
-
-
-
-*/
+</div>*/

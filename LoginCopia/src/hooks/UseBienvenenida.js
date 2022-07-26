@@ -6,13 +6,13 @@ export const useBienvenida = () => {
 
     const { verificarToken } = useContext(AuthContext);
   const Desloggear = async () => {
-    console.log("holaaaaaaaaaaaa")
 
 
 
 
 
-       
+
+       // fui al baño 
  
       
     localStorage.removeItem('token')

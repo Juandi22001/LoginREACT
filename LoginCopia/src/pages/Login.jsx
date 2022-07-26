@@ -2,8 +2,8 @@ import { useForm } from "../hooks/useForm";
 import Swal from 'sweetalert2'
 import { Image } from "@nextui-org/react";
 
-import { Input, Grid, Row, Button, Text, Modal, useModal, Spacer } from "@nextui-org/react";
-import { useContext } from 'react'
+import { Input, Grid, Row, Button, Text, Modal, useModal, Spacer,Card} from "@nextui-org/react";
+import { useContext, useEffect, useState } from 'react'
 import { useLogin } from "../hooks/useLogin";
 import { AuthContext } from "../Context/AuthContext";
 export const Login = () => {
@@ -13,6 +13,7 @@ const { submitLogin } = useContext(AuthContext)
     const { CrearUsuario } = useLogin();
 
     const { setVisible, bindings } = useModal();
+    const [bienvenida,setBienvenida] = useState(false)
 
 
     const { values, handleInputChange } = useForm({
@@ -22,8 +23,7 @@ const { submitLogin } = useContext(AuthContext)
         USER: '',
         showPassword: false,
         Nombre: '',
-        USER: '',
-
+     
         ConfirmarPassword: '',
         EDAD: '',
         Telefono: ''
@@ -36,18 +36,26 @@ const { submitLogin } = useContext(AuthContext)
 
 
     });
+    useEffect(() => {
+        setInterval(set, 3000);
 
 
+})
+function set() {
+    setBienvenida(true)
+
+  
+  }
     const handleLogin = (e) => {
 
 
 
 
-        if (values.USER == '') {
+        if (values.USER === '') {
 
             Swal.fire("Campo User Obligatorio", "Mensaje:", "warning")
         }
-        else if (values.Password == '') {
+        else if (values.Password === '') {
 
             Swal.fire("Campo Password Obligatorio", "Mensaje:", "warning")
         } else {
@@ -65,11 +73,11 @@ const { submitLogin } = useContext(AuthContext)
 
 
 
-        if (values.Password != values.ConfirmarPassword) {
+        if (values.Password !== values.ConfirmarPassword) {
 
             Swal.fire("Las contraseñas no coincidem", "Mensaje:", "warning")
         }
-        else if (values.USER == '') {
+        else if (values.USER === '') {
 
             Swal.fire("Campo USER Obligatorio", "Mensaje:", "warning")
         } else {
@@ -78,33 +86,22 @@ const { submitLogin } = useContext(AuthContext)
         }
 
     }
-    const Limpiar = (e) => {
-
-        console.log("aqui?")
-
-
-
-
-        values.Nombre = ''
-        values.USER = ''
-        values.Password = ''
-        values.EDAD = ''
-        values.ConfirmarPassword = ''
-        values.Telefono = ''
-
-    }
-
+   
     return (
+        <div  class="Contenedor">
+{bienvenida === false ?
+
+<>
+<div class="bienvenida" >
+
+   
 
 
-        <div class="body">
+</div>
 
+</>
 
-            <Grid.Container gap={1} justify="center" align="center" bordered={2}>
-
-                <Image src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/logoPortal.png?raw=true" width={800}
-                    height={350} alt="efe?" />
-                <Row justify="center" align="center">
+: (   
 
 
 
@@ -112,201 +109,257 @@ const { submitLogin } = useContext(AuthContext)
 
 
 
-                    <form id="form" >
-
-                        <Grid >
-
-                            <Input
-                                bordered
-                                labelPlaceholder="Usuario" color="success"
-                                id="USER" name="USER" value={values.USER}
-                                onChange={handleInputChange}
 
 
-                            />
-
-                        </Grid>
 
 
-                        <Grid >
 
-                            <Input
-                                id="filled-adornment-password"
-                                type='password'
-                                bordered
-                                color="success" placeholder=" Contraseña"
-                                value={values.Password} name="Password" onChange={handleInputChange}
+<div class="Fondoportal" >
 
 
-                            />
 
-                        </Grid>
 
-                        <Row justify="space-around" align="center">
 
-                            <Grid css={{ m: 10 }}>
-                                <Button auto ghost color="success" onClick={() => handleLogin()} >
-                                    Login
+
+
+
+
+
+<Grid.Container gap={2} justify="center" align="center" bordered={2}>
+
+<div class="centerCard">
+
+<Card  css={{ p: "$6", mw: "350px" }} >
+
+<Card.Header >
+<Card.Image
+  src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/LogoPortal1.png?raw=true" 
+
+   alt="efe?"   
+        
+        objectFit="cover"
+        
+        />
+        
+
+
+</Card.Header>
+
+
+
+
+
+        <form id="form" >
+        <Card.Body css={{ p: 0, justifyItems: "center" ,zIndex: 1, top: 5 }}>
+            <div class="center">
+            <Grid  xs={12} sm={24} align="center">
+
+                <Input
+                    bordered
+                    labelPlaceholder="Usuario" color="primary"
+                    id="USER" name="USER" value={values.USER}
+                    onChange={handleInputChange}
+
+
+                />
+
+            </Grid>
+
+
+            <Grid  xs={12} sm={24} align="center">
+                <Input
+                    id="filled-adornment-password"
+                    type='password'
+                    bordered
+                    color="primary" placeholder=" Contraseña"
+                    value={values.Password} name="Password" onChange={handleInputChange}
+
+
+                />
+
+            </Grid>
+            </div>
+            </Card.Body>
+            <Row justify="space-around" align="center">
+
+                <Grid css={{ m: 10 }}>
+                    <Button auto ghost color="primary" onClick={() => handleLogin()} >
+                        Login
+                    </Button>
+                </Grid>
+                <Grid>
+
+                    <Text color="primary" size={12}>
+                        Eres nuevo?
+                    </Text>
+                    <Button auto ghost color="primary" css={{ m: 1 }} onClick={() => setVisible(true)}  >
+                        Registrarse
+                  
+                     </Button>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <Modal
+
+                        width="400px"
+
+
+
+                        aria-labelledby="modal-title"
+                        aria-describedby="modal-description"
+                        {...bindings}
+                    >
+                        <Modal.Header  css={{ xs: 8 }}   >
+
+
+                            <Image src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/registroLogo.png?raw=true" width={700}
+                                height={200} alt="efe?" />
+
+                        </Modal.Header>
+                        <Modal.Body align="center" >
+
+
+                            <Row justify='center' align="center" css={{ m: 10 }} >
+
+
+                                <Input
+                                    clearable
+                                    bordered
+                                    Placeholder="Nombre" color="success"
+                                    id="Nombre" name="Nombre" value={values.Nombre}
+                                    onChange={handleInputChange}
+
+
+                                />
+                                <Spacer y={2.5} />
+                            </Row>
+
+                            <Row justify='center' align="center" css={{ xs: 4 }} >
+
+
+
+                                <Input
+                                    clearable
+                                    bordered
+                                    Placeholder="USER" color="success"
+                                    id="USER" name="USER" value={values.USER}
+                                    onChange={handleInputChange}
+
+
+                                />
+                            </Row>
+
+
+                            <Row justify='center' align="center" css={{ xs: 4 }} >
+
+
+
+                                <Input
+                                    clearable
+                                    bordered
+                                    type='password'
+                                    Placeholder="Contraseña" color="success"
+                                    id="Password" name="Password" value={values.Password}
+                                    onChange={handleInputChange}
+
+
+                                />
+                            </Row>
+
+                            <Row justify='center' align="center" css={{ xs: 4 }} >
+
+
+
+                                <Input
+                                    clearable
+                                    bordered
+                                    type='password'
+                                    Placeholder="Confirmar Contraseña" color="success"
+                                    id="ConfirmarPassword" name="ConfirmarPassword" value={values.ConfirmarPassword}
+                                    onChange={handleInputChange}
+
+
+                                />
+                            </Row>
+                            <Row justify='center' align="center" css={{ xs: 4 }} >
+
+
+
+                                <Input
+                                    clearable
+                                    bordered
+                                    type='Number'
+                                    Placeholder="EDAD" color="success"
+                                    id="EDAD" name="EDAD" value={values.EDAD}
+                                    onChange={handleInputChange}
+
+
+                                />
+                            </Row>
+                            <Row justify='center' align="center" css={{ xs: 4 }} >
+
+
+
+                                <Input
+                                    clearable
+                                    bordered
+                                    type='Number'
+                                    Placeholder="Telefono" color="success"
+                                    id="Telefeono" name="Telefono" value={values.Telefono}
+                                    onChange={handleInputChange}
+
+
+                                />
+                            </Row>
+                            <Row justify="space-around" align="center" css={{ xs: 8 }} >
+                                <Button auto ghost color="success" onClick={() => handleSubmitUsuario()} >
+                                    Registrar
                                 </Button>
-                            </Grid>
-                            <Grid>
 
-                                <Text color="success" size={12}>
-                                    Eres nuevo?
+                            </Row>
+                            <Row justify='center' align="center">
+
+                                <Text color="success" id="modal-title" size={18}>
+
                                 </Text>
-                                <Button auto ghost color="success" css={{ m: 1 }} onClick={() => setVisible(true)}  >
-                                    Registrarse
-                                </Button>
-                                <Modal
+                            </Row>
+                        </Modal.Body>
+                        <Modal.Footer>
 
-                                    width="400px"
+                            <Button auto ghost color="success" onClick={() => setVisible(false)}>
+                                salir
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </Grid>
 
+            </Row>
 
-
-                                    aria-labelledby="modal-title"
-                                    aria-describedby="modal-description"
-                                    {...bindings}
-                                >
-                                    <Modal.Header  css={{ xs: 8 }}   >
-
-
-                                        <Image src="https://github.com/Juandi22001/LoginREACT/blob/main/Imagenes/registroLogo.png?raw=true" width={700}
-                                            height={200} alt="efe?" />
-
-                                    </Modal.Header>
-                                    <Modal.Body align="center" >
+        </form>
+        </Card>
+        </div>
+</Grid.Container>
 
 
-                                        <Row justify='center' align="center" css={{ m: 10 }} >
+</div >
 
+)}
 
-                                            <Input
-                                                clearable
-                                                bordered
-                                                Placeholder="Nombre" color="success"
-                                                id="Nombre" name="Nombre" value={values.Nombre}
-                                                onChange={handleInputChange}
-
-
-                                            />
-                                            <Spacer y={2.5} />
-                                        </Row>
-
-                                        <Row justify='center' align="center" css={{ xs: 4 }} >
-
-
-
-                                            <Input
-                                                clearable
-                                                bordered
-                                                Placeholder="USER" color="success"
-                                                id="USER" name="USER" value={values.USER}
-                                                onChange={handleInputChange}
-
-
-                                            />
-                                        </Row>
-
-
-                                        <Row justify='center' align="center" css={{ xs: 4 }} >
-
-
-
-                                            <Input
-                                                clearable
-                                                bordered
-                                                type='password'
-                                                Placeholder="Contraseña" color="success"
-                                                id="Password" name="Password" value={values.Password}
-                                                onChange={handleInputChange}
-
-
-                                            />
-                                        </Row>
-
-                                        <Row justify='center' align="center" css={{ xs: 4 }} >
-
-
-
-                                            <Input
-                                                clearable
-                                                bordered
-                                                type='password'
-                                                Placeholder="Confirmar Contraseña" color="success"
-                                                id="ConfirmarPassword" name="ConfirmarPassword" value={values.ConfirmarPassword}
-                                                onChange={handleInputChange}
-
-
-                                            />
-                                        </Row>
-                                        <Row justify='center' align="center" css={{ xs: 4 }} >
-
-
-
-                                            <Input
-                                                clearable
-                                                bordered
-                                                type='Number'
-                                                Placeholder="EDAD" color="success"
-                                                id="EDAD" name="EDAD" value={values.EDAD}
-                                                onChange={handleInputChange}
-
-
-                                            />
-                                        </Row>
-                                        <Row justify='center' align="center" css={{ xs: 4 }} >
-
-
-
-                                            <Input
-                                                clearable
-                                                bordered
-                                                type='Number'
-                                                Placeholder="Telefono" color="success"
-                                                id="Telefeono" name="Telefono" value={values.Telefono}
-                                                onChange={handleInputChange}
-
-
-                                            />
-                                        </Row>
-                                        <Row justify="space-around" align="center" css={{ xs: 8 }} >
-                                            <Button auto ghost color="success" onClick={() => handleSubmitUsuario()} >
-                                                Registrar
-                                            </Button>
-
-                                        </Row>
-                                        <Row justify='center' align="center">
-
-                                            <Text color="success" id="modal-title" size={18}>
-
-                                            </Text>
-                                        </Row>
-                                    </Modal.Body>
-                                    <Modal.Footer>
-
-                                        <Button auto ghost color="success" onClick={() => setVisible(false)}>
-                                            salir
-                                        </Button>
-                                    </Modal.Footer>
-                                </Modal>
-                            </Grid>
-
-                        </Row>
-
-                    </form>
-
-                </Row>
-            </Grid.Container>
-
-
-        </div >
-
-
+</div>      
 
 
     )
 }
-/*
-
-hola como esas 
-*/
