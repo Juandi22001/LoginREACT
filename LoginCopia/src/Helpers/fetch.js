@@ -1,7 +1,7 @@
 export const Fetch_sin_Token = async (endpoint, data, method = 'GET') => {
 
 
-    const url = 'https://34.125.59.69:5000/' + endpoint
+    const url = 'http://34.125.59.69:5000/' + endpoint
 
     if (method === 'GET') {
         const resp = await fetch(url);
@@ -32,7 +32,7 @@ export const Fetch_sin_Token = async (endpoint, data, method = 'GET') => {
 export const FetchPostSesion = async (endpoint, data, method = 'GET') => {
 
     console.log(data)
-    const url = 'https://34.125.59.69:5000/' + endpoint
+    const url = 'http://34.125.59.69:5000/' + endpoint
 
     if (method === 'GET') {
         const resp = await fetch(url);
@@ -62,7 +62,7 @@ export const FetchPostSesion = async (endpoint, data, method = 'GET') => {
 export const FetchSesion = async (endpoint, method = 'GET') => {
 
 
-    const url = 'https://34.125.59.69:5000/' + endpoint
+    const url = 'http://34.125.59.69:5000/' + endpoint
     
     if (method === 'GET') {
         const resp = await fetch(url);
@@ -86,7 +86,7 @@ export const FetchToken = async (endpoint, method = 'GET') => {
     const pruebaToken= await FetchSesion('Sesion','GET')
   
 
-    const url = 'https://34.125.59.69:5000/' + endpoint
+    const url = 'http://34.125.59.69:5000/' + endpoint
 
     if (method === 'GET') {
 
