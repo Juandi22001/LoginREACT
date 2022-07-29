@@ -78,6 +78,7 @@ export const Bienvenida = () => {
   return (
 
     <div class="MenuPortal" >
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
       <Barra></Barra>
       <Grid.Container gap={1} justify="flex-start">
      

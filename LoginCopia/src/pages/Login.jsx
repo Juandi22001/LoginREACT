@@ -88,7 +88,11 @@ function set() {
     }
    
     return (
+
+
+        
         <div  class="Contenedor">
+            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
 {bienvenida === false ?
 
 <>
@@ -118,7 +122,7 @@ function set() {
 
 
 
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
 
 
 
