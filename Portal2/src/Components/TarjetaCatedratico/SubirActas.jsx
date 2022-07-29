@@ -8,29 +8,9 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import { green } from '@mui/material/colors';
 export default function SubirActas() {
     const { auth } = useContext(AuthContext)
-    const { setVisible, bindings } = useModal();
-    const { Desloggear, Mover,MoverActas } = useBienvenida()
-    const { values, handleInputChange } = useForm({
+ 
+    const { MoverActas } = useBienvenida()
 
-
-        Password: '',
-        USER: '',
-        showPassword: false,
-        Nombre: '',
-        USER: '',
-
-        ConfirmarPassword: '',
-        EDAD: '',
-        Telefono: ''
-
-
-
-
-
-
-
-
-    });
     useEffect(() => {
 
         console.log("auth", auth)
@@ -48,7 +28,7 @@ export default function SubirActas() {
                     <Collapse title={
 
                         <>
-                            <div class="">
+                        
                                 <Grid xs={4} sm={11} justify='center' align="center">
                                     <AssignmentIcon fontSize="large"  sx={{ fontSize: 70 ,color: green[800]}} />
                                 </Grid>
@@ -66,7 +46,7 @@ export default function SubirActas() {
                                     </Text>
                                 </Grid>
 
-                            </div>       <Card.Divider />
+                               <Card.Divider />
 
                         </>
 
@@ -77,8 +57,7 @@ export default function SubirActas() {
 
                             <div class="textoCard">
                                 <Text  color="success" css={{ lineHeight: "$xs", padding: '$2 $3' }}>
-                                    Portal designado para poder realizar
-                                    todos los pagos pendientes ,  que posee como usuario
+                                   Subir tus actas de los cursos asignados que tengas de una manera tranquila
                                 </Text>
 
 

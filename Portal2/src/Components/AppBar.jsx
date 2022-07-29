@@ -4,10 +4,10 @@ import Box from '@mui/material/Box';
 import { useBienvenida } from '../hooks/UseBienvenenida';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import { Input, Grid, Row, Button, Text, Link, Modal, useModal, Spacer } from "@nextui-org/react";
+import {  Grid, Text } from "@nextui-org/react";
 import Menu from '@mui/material/Menu';
 import PersonIcon from '@mui/icons-material/Person';
-import Container from '@mui/material/Container';
+
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { green } from '@mui/material/colors';
 import Tooltip from '@mui/material/Tooltip';
@@ -61,7 +61,7 @@ const Barra = () => {
   const IrSistema1 = () => {
     Mover()
   };
-  const primary = green[50]; // #f44336
+ 
   return (
     <div class="Barra">
     <AppBar position="static"  color="transparent"  sx={{ color: green[100]}} >

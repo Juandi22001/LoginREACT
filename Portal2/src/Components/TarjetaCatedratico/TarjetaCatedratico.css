@@ -1,15 +1,4 @@
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-    display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 50px;
 
-
-  text-align: center;
-  font-family: arial;
-}
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));

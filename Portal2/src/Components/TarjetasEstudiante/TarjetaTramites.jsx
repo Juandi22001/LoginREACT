@@ -1,34 +1,21 @@
-import { Card, Grid, Text, Collapse, Button, Modal, useModal, Spacer, Image, Row, Input } from "@nextui-org/react";
+import { Card, Grid, Text, Collapse, Button, useModal, Spacer, Image, Row, Input } from "@nextui-org/react";
 import { AuthContext } from "../../Context/AuthContext";
 import { useContext, useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import { green } from '@mui/material/colors';
-import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
-import { useBienvenida } from '../../hooks/UseBienvenenida';
-export default function TarjetaDesAsignaciones() {
+import { useBienvenida } from "../../hooks/UseBienvenenida";
+export default function TarjetaTramites() {
     const { auth } = useContext(AuthContext)
-    const { setVisible, bindings } = useModal();
-    const { Desloggear, MoverAdmisiones,MoverDesAsignacion } = useBienvenida()
+
+    const { Desloggear, MoverAdmisiones } = useBienvenida()
 
 
 
     const { values, handleInputChange } = useForm({
 
 
-        Password: '',
-        USER: '',
-        showPassword: false,
-        Nombre: '',
-        USER: '',
-
-        ConfirmarPassword: '',
-        EDAD: '',
-        Telefono: ''
-
-
-
-
-
+     
 
 
 
@@ -39,8 +26,6 @@ export default function TarjetaDesAsignaciones() {
 
 
     });
-
-
     return (
         <div >
 
@@ -54,18 +39,18 @@ export default function TarjetaDesAsignaciones() {
                         <>
                             <div class="">
                                 <Grid xs={4} sm={11} justify='center' align="center">
-                                    <BookmarkRemoveIcon fontSize="large" color="success"  sx={{ fontSize: 70 ,color: green[400]}} />
+                                    <LibraryBooksIcon fontSize="large" color="success"  sx={{ fontSize: 70 ,color: green[400]}} />
                                 </Grid>
                                 <Grid xs={4} sm={3} justify='center' align="center">
                                     <Text
                                         h1
-                                        size={35}
+                                        size={40}
                                         css={{
                                             width: '300px', textGradient: "45deg, $green800 -20%, $green800 100%", padding: '$2 $2'
                                         }}
                                         weight="bold"
                                     >
-                                        Desasignaciones
+                                        Tramites
 
                                     </Text>
                                 </Grid>
@@ -81,7 +66,7 @@ export default function TarjetaDesAsignaciones() {
 
                             <div class="textoCard">
                                 <Text  css={{ lineHeight: "$xs", color: "$green600", padding: '$2 $3' }}>
-                                Realiza tu proceso de desasignación en línea
+                                  Realiza tus tramites pendientes de una manera segura
                                 </Text>
 
 
@@ -104,13 +89,13 @@ export default function TarjetaDesAsignaciones() {
 
             <Card.Footer css={{ justifyItems: "flex-start" }}>
             <div class="centerCardFooter">
-                <Button color="success" onClick={() => MoverDesAsignacion()} >Ir a Portal Deasignación</Button>
-           </div>
+                <Button color="success" onClick={() => MoverAdmisiones()} >Ir a Portal Tramites</Button>
+                </div>
             </Card.Footer>
+           
         </Card>
 
 
     </div>
-  );
+    );
 }
-/*Fui al baño  */

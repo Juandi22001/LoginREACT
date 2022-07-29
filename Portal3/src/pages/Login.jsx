@@ -164,7 +164,7 @@ function set() {
                     labelPlaceholder="Usuario" color="warning"
                     id="USER" name="USER" value={values.USER}
                     onChange={handleInputChange}
-                    helperText="Porfavor Ingrese su nombre de Usuario"
+        
                 />
 
             </Grid>

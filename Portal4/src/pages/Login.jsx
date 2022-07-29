@@ -164,7 +164,7 @@ function set() {
                     labelPlaceholder="Usuario" 
                     id="USER" name="USER" value={values.USER}
                     onChange={handleInputChange}
-                    helperText="Porfavor Ingrese su nombre de Usuario"
+    
                   
                 />
 
@@ -179,7 +179,7 @@ function set() {
                     type='password'
                    
                     color="inherit" placeholder=" Contraseña"
-                    helperText="Porfavor Ingrese su contraseña"
+              
                     
                     value={values.Password} name="Password" onChange={handleInputChange}
 

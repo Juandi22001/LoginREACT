@@ -1,6 +1,6 @@
 import { useForm } from "../../hooks/useForm";
 
-import { Pagination, Grid, Row, Button, Text, Modal, useModal, Spacer } from "@nextui-org/react";
+import { Pagination, Grid, useModal, Spacer } from "@nextui-org/react";
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../Context/AuthContext';
 import VerMaestria from "./VerMaestria";

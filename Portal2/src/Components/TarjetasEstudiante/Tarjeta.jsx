@@ -1,4 +1,4 @@
-import { Card, Grid, Text, Collapse, Button, Modal, useModal, Spacer, Image, Row, Input } from "@nextui-org/react";
+import { Card, Grid, Text, Collapse, Button, useModal, Spacer} from "@nextui-org/react";
 import { AuthContext } from "../../Context/AuthContext";
 import { useContext, useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
@@ -12,19 +12,6 @@ export default function Tarjeta() {
     const { setVisible, bindings } = useModal();
     const { Desloggear, Mover } = useBienvenida()
     const { values, handleInputChange } = useForm({
-
-
-        Password: '',
-        USER: '',
-        showPassword: false,
-        Nombre: '',
-        USER: '',
-
-        ConfirmarPassword: '',
-        EDAD: '',
-        Telefono: ''
-
-
 
 
 
@@ -80,8 +67,7 @@ export default function Tarjeta() {
 
                                 <div class="textoCard">
                                     <Text css={{ lineHeight: "$xs", color: "$green600", padding: '$2 $3' }}>
-                                        Portal designado para poder realizar
-                                        todos los pagos pendientes ,  que posee como usuario
+                                        Realiza la asignación de los cursos que desees asignarte
                                     </Text>
 
 

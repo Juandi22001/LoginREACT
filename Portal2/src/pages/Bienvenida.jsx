@@ -15,7 +15,7 @@ import { TarjetaEgresado } from "../Components/TarjetaEgresado/TarjetaEgresado";
 import Barra from "../Components/AppBar";
 import BarDown from "../Components/BarDown";
 
-import { green } from '@mui/material/colors';
+import { blue } from '@mui/material/colors';
 export const Bienvenida = () => {
 
 
@@ -91,15 +91,13 @@ export const Bienvenida = () => {
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList
-                 textColor="inherit"
-                 indicatorColor="inherit"
 
                   sx={{
                     width: '360px', padding: '10px',
-                    height: 0, typography: 'body1', margin: 'auto',color:green[700]
+                    height: 0, typography: 'body1', margin: 'auto'
                   }}
 
-               
+
                   onChange={handleChange} aria-label="lab API tabs example">
 
                   {
@@ -110,8 +108,7 @@ export const Bienvenida = () => {
 
 
 
-                      <Tab label={item.nombre} value={item.valor} 
-                   
+                      <Tab label={item.nombre} value={item.valor}
 
 
 
@@ -134,7 +131,7 @@ export const Bienvenida = () => {
                 h1
                 size={20}
                 css={{
-                  textGradient: "45deg, $green600 -20%, $green900 100%",
+                  textGradient: "45deg, $blue600 -20%, $blue900 100%",
                 }}
                 weight="bold"
               >

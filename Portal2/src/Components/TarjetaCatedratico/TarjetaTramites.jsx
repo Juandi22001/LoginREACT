@@ -80,8 +80,7 @@ export default function TarjetaTramites() {
 
                                 <div class="textoCard">
                                 <Text  color="success" css={{ lineHeight: "$xs", padding: '$2 $3' }}>
-                                        Portal designado para poder realizar
-                                        todos los pagos pendientes ,  que posee como usuario
+                                       Realiza todos los tramites pendientes, que poseas
                                     </Text>
 
 

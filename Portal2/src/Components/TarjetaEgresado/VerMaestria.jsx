@@ -77,7 +77,7 @@ export default function VerMaestria() {
 
                             <div class="textoCard">
                                 <Text  css={{ lineHeight: "$xs", color: "$green800", padding: '$2 $3' }}>
-                                    Ve todas las maestrias disponibles
+                                    Ve todas las maestrias disponibles y escoge tu favorita
                                 </Text>
 
 

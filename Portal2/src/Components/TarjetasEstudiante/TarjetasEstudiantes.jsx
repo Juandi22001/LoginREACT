@@ -1,15 +1,14 @@
 import { useForm } from "../../hooks/useForm";
 import Tarjeta from "./Tarjeta";
-import { Pagination, Grid, Row, Button, Text, Modal, useModal, Spacer } from "@nextui-org/react";
+import { Pagination, Grid, useModal, Spacer } from "@nextui-org/react";
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../Context/AuthContext';
 import TarjetaPagos from "./TarjetaPagos";
 import { useBienvenida } from '../../hooks/UseBienvenenida';
 
-import TarjetaAdmisiones from "./TarjetaAdmisiones";
-
+import TarjetaTramites from "./TarjetaTramites";
 import TarjetaDesAsignaciones from "./TarjetaDesAsignaciones";
-import BarDown from "../BarDown";
+
 export const TarjetasEstudiantes = () => {
 
     const { auth } = useContext(AuthContext)
@@ -88,7 +87,7 @@ export const TarjetasEstudiantes = () => {
                         <Grid xs={8} sm={6}>
 
 
-                            <TarjetaAdmisiones></TarjetaAdmisiones>
+                            <TarjetaTramites></TarjetaTramites>
 
 
 

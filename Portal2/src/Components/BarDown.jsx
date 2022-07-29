@@ -3,16 +3,13 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import { useBienvenida } from '../hooks/UseBienvenenida';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import { Input, Grid, Row, Button, Text, Link, Modal, Avatar, Spacer } from "@nextui-org/react";
-import Menu from '@mui/material/Menu';
-import PersonIcon from '@mui/icons-material/Person';
-import Container from '@mui/material/Container';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import {  Grid, Text } from "@nextui-org/react";
+import Divider from '@mui/material/Divider';
 import { green } from '@mui/material/colors';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { Lista } from './Lista';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import { Image } from "@nextui-org/react";
 
 import Swal from 'sweetalert2'
@@ -74,17 +71,11 @@ const Barra = () => {
     <Grid xs={4} sm={6}  > 
     <Box sx={{ flexGrow: 10, display: { xs: '1', md: '8px',padding: '$20 $24' } }}>
     <Grid xs={4} sm={6} > 
-          <Avatar
-          src="https://res.cloudinary.com/webuvg/image/upload/f_auto,q_auto,w_164,c_scale,fl_lossy,dpr_2.63/f_auto,q_auto,fl_lossy,c_scale,w_200/v1641327930/WEB/Nosotros/Imagen%20Institucional/Logotipo%20UVG/Logotipo%20UVG/Logo-UVG-cuadrado.jpg"
-          css={{ size: "$20" }}
-          color="success"
-          bordered
-          squared
-          zoomed
+    <Image src="https://res.cloudinary.com/webuvg/image/upload/f_auto,q_auto,w_164,c_scale,fl_lossy,dpr_2.63/f_auto,q_auto,fl_lossy,c_scale,w_200/v1641327930/WEB/Nosotros/Imagen%20Institucional/Logotipo%20UVG/Logotipo%20UVG/Logo-UVG-cuadrado.jpg" width={120} margin-left={200} maxDelay={5} height={180} alt="efe?" />
 
-        />
+       
  </Grid>
- <Grid xs={4} sm={6} > 
+ <Grid xs={4} sm={8} > 
 <Text
                   h1
                   size={15}
@@ -103,13 +94,13 @@ GUATEMALA, GUATEMALA. 01015
           <Grid xs={4} sm={2}  > 
           </Grid>
 
-
+          <Divider orientation="vertical" flexItem />
           
     <Grid xs={4} sm={3}  > 
          
           <Box sx={{ flexGrow: 10, display: { xs: '1', md: '8px',padding: '$20 $24' } }}>
     
-                
+          <Grid xs={4} sm={7}  > 
           <Text
                   h1
                   size={23}
@@ -120,24 +111,21 @@ GUATEMALA, GUATEMALA. 01015
                 >
            ©  Universidad del Valle de Guteamala 2022
                 </Text>
-               
+                </Grid>
+                <Grid xs={4} sm={10}  > 
+                <FacebookIcon fontSize="large" sx={{ fontSize: 50, color: green[700] }}    />
+                <InstagramIcon fontSize="large" sx={{ fontSize: 50, color: green[700] }}    />
+                <TwitterIcon fontSize="large" sx={{ fontSize: 50, color: green[700] }}    />
+                
+                <YouTubeIcon fontSize="large" sx={{ fontSize: 50, color: green[700] }}    />
+              
+                </Grid>
           </Box>
 
       
        
           </Grid>
-
-          <Box sx={{ flexGrow: 1, display: { xs: '20', md: '2px' } }}>
-         
-  
-
-       
-
-                
-       
-     
-          </Box>
-
+   
           </Grid.Container>
 
         </Toolbar>

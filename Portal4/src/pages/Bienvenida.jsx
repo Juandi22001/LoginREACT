@@ -15,7 +15,7 @@ import { TarjetaEgresado } from "../Components/TarjetaEgresado/TarjetaEgresado";
 import Barra from "../Components/AppBar";
 import BarDown from "../Components/BarDown";
 
-import { grey } from '@mui/material/colors';
+import { blue } from '@mui/material/colors';
 export const Bienvenida = () => {
 
 
@@ -80,8 +80,8 @@ export const Bienvenida = () => {
     <div class="MenuPortal" >
       <Barra></Barra>
       <Grid.Container gap={1} justify="flex-start">
-
-
+     
+      
         <Grid xs={12} sm={12} align="center">
 
           <Box sx={{
@@ -90,17 +90,11 @@ export const Bienvenida = () => {
           }}>
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-
-
-
-                
                 <TabList
-                  textColor="inherit"
-                  indicatorColor="inherit"
 
                   sx={{
                     width: '360px', padding: '10px',
-                    height: 0, typography: 'body1', margin: 'auto', color: grey[700]
+                    height: 0, typography: 'body1', margin: 'auto'
                   }}
 
 
@@ -118,7 +112,6 @@ export const Bienvenida = () => {
 
 
 
-
                       />
 
 
@@ -133,98 +126,96 @@ export const Bienvenida = () => {
 
 
                 </TabList>
-
-                
               </Box>
               <TabPanel value="1">   <Text
                 h1
                 size={20}
                 css={{
-                  textGradient: "45deg, $orange600 -20%, $orange900 100%",
+                  textGradient: "45deg, $blue600 -20%, $blue900 100%",
                 }}
                 weight="bold"
               >
                 Escoja la opcion que desee
-
+                
               </Text></TabPanel>
 
 
-              <TabPanel value="2">
+              <TabPanel value="2">  
+              
+              
+               <TarjetasEstudiantes></TarjetasEstudiantes>   
+              <div class="ContFooter">  
+        <Grid  xs={12}  sm={24} align="center">
+          
 
 
-                <TarjetasEstudiantes></TarjetasEstudiantes>
-                <div class="ContFooter">
-                  <Grid xs={12} sm={24} align="center">
+
+          
+        <footer>
+
+        <BarDown></BarDown>
 
 
+        </footer>
+        
 
-
-
-                    <footer>
-
-                      <BarDown></BarDown>
-
-
-                    </footer>
-
-
-                  </Grid>
-                </div>
+</Grid>
+</div>  
               </TabPanel>
-              <TabPanel value="3">
-                <TarjetaCatedratico></TarjetaCatedratico>
-                <div class="ContFooter">
-                  <Grid xs={12} sm={24} align="center">
+              <TabPanel value="3">          
+               <TarjetaCatedratico></TarjetaCatedratico>   
+              <div class="ContFooter">  
+        <Grid  xs={12}  sm={24} align="center">
+          
 
 
 
+          
+        <footer>
+
+        <BarDown></BarDown>
 
 
-                    <footer>
+        </footer>
+        
 
-                      <BarDown></BarDown>
-
-
-                    </footer>
-
-
-                  </Grid>
-                </div>
-
-              </TabPanel>
-              <TabPanel value="4">
-
-                <TarjetaEgresado></TarjetaEgresado>
-                <div class="ContFooter">
-                  <Grid xs={12} sm={24} align="center">
-
-
-
-
-
-                    <footer>
-
-                      <BarDown></BarDown>
-
-
-                    </footer>
-
-
-                  </Grid>
-                </div>
+</Grid>
+</div>  
+              
+               </TabPanel> 
+              <TabPanel value="4"> 
+                
+              <TarjetaEgresado></TarjetaEgresado>   
+              <div class="ContFooter">  
+        <Grid  xs={12}  sm={24} align="center">
+          
 
 
 
-              </TabPanel>
+          
+        <footer>
+
+        <BarDown></BarDown>
+
+
+        </footer>
+        
+
+</Grid>
+</div>   
+        
+              
+              
+               </TabPanel>
             </TabContext>
-
+          
           </Box>
-
+      
         </Grid>
-
-
+    
+    
       </Grid.Container>
-
+  
 
 
     </div>)
