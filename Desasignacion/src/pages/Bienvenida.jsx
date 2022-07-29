@@ -16,13 +16,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import ScienceIcon from '@mui/icons-material/Science';
-
+import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 import Container from '@mui/material/Container';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
+
 import { Image } from "@nextui-org/react";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -266,41 +266,46 @@ export const Bienvenida = () => {
 
 
       <Grid.Container gap={2} justify="flex-start">
+      <Grid xs={8} sm={3.5}>
+      </Grid>
 
-        <Grid xs={8} sm={13} justify="center">
+
+        <Grid xs={8} sm={8} justify="center">
 
           <Text
             h1
-            size={85}
+            
+            size={75}
             css={{
-              textGradient: "45deg, $blue800 -20%, $blue900 100%",
+              width: '900%',   textGradient: "45deg, $blue800 -20%, $blue900 100%",
             }}
             weight="bold"
           >
-            Desasignacion
+            Desasignación
 
           </Text>
 
 
-
-
-
-
-
-        </Grid>
+          </Grid>
       </Grid.Container>
-
 
 
       <Grid.Container gap={2} justify="flex-start">
 
 
-        <div class="center">
+        <Grid xs={8} sm={1.5} justify="center"
+
+        >
+      </Grid>
 
 
-          <Grid xs={6} sm={4}>
 
-            <Card isPressable css={{ w: "1000px", h: "800px", color: "$blue400" }}>
+
+
+      <Grid xs={8} sm={2.5}>
+
+      <Box sx={{ width: '200px', maxWidth: '200px' }}>
+            <Card isPressable css={{width: '450%', h: "800px",  padding: '10px',color: "$blue400" }}>
 
               <Card.Header css={{ p: 5, justifyItems: "center" }}>
                 <div class="center">
@@ -378,10 +383,10 @@ export const Bienvenida = () => {
 
               </Card.Footer>
             </Card>
-
+            </Box>
 
           </Grid>
-        </div>
+       
 
 
 
