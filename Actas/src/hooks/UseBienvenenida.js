@@ -55,7 +55,7 @@ export const useBienvenida = () => {
        
  
       
-    window.location.replace("http://localhost:3001");
+    window.location.replace("https://main.d250xr0cyyplkf.amplifyapp.com");
 
 
 

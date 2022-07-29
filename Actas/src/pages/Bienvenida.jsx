@@ -1,5 +1,5 @@
 import { useForm } from "../hooks/useForm";
-
+import Skeleton from '@mui/material/Skeleton';
 import { green } from '@mui/material/colors';
 import Container from '@mui/material/Container';
 import { Grid, Row, Button, Text, Modal, useModal, Spacer } from "@nextui-org/react";
@@ -23,10 +23,10 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import BookmarksIcon from '@mui/icons-material/Bookmarks';
+import ArticleIcon from '@mui/icons-material/Article';
+import SettingsIcon from '@mui/icons-material/Settings';
 import { useBienvenida } from '../hooks/UseBienvenenida';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { Image } from "@nextui-org/react";
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import Tooltip from '@mui/material/Tooltip';
@@ -95,6 +95,7 @@ export const Bienvenida = () => {
 
     }
     else {
+      setValue('1')
       setProductosFiltrados(pestaña)
 
     }
@@ -165,32 +166,32 @@ export const Bienvenida = () => {
 
         >
           <ListItemIcon>
-            <AccountBalanceIcon sx={{ color: green[900] }} />
+            <UploadFileIcon sx={{ color: green[900], fontSize: '45px' }} />
           </ListItemIcon>
           <ListItemText sx={{ color: green[900] }} primary="Subir Actas" />
 
         </ListItemButton>
         <ListItemButton
           selected={selectedIndex === 1}
-          onClick={() => Agregar("cambio", "3")}
+          onClick={() => Agregar("Ver Actas", "3")}
 
         >
           <ListItemIcon>
-            <MenuBookIcon fontSize="large" sx={{ color: green[900] }} />
+            <ArticleIcon fontSize="large" sx={{ color: green[900], fontSize: '45px' }} />
           </ListItemIcon>
-          <ListItemText sx={{ color: green[900] }} primary="Cambio de Carrera" />
+          <ListItemText sx={{ color: green[900] }} primary="Ver Actas" />
         </ListItemButton>
       </List>
       <Divider />
       <List component="nav" aria-label="secondary mailbox folder">
         <ListItemButton
           selected={selectedIndex === 2}
-          onClick={() => Agregar("simultanea", "4")}
+          onClick={() => Agregar("Generar Acta", "4")}
 
         >        <ListItemIcon>
-            <BookmarksIcon sx={{ color: green[900] }} />
+            <SettingsIcon sx={{ color: green[900] ,fontSize: '45px'}} />
           </ListItemIcon >
-          <ListItemText sx={{ color: green[900] }} primary="Carrera Simultanea" />
+          <ListItemText sx={{ color: green[900] }} primary="Generar Acta" />
         </ListItemButton>
         <ListItemButton
           selected={selectedIndex === 3}
@@ -292,25 +293,25 @@ export const Bienvenida = () => {
 
 
             <Box sx={{ flexGrow: 1 }}>
-          <Button auto  color="success" onClick={() => borrarALL()}>
-          < DeleteForeverIcon  fontSize="large" sx={{ fontSize: 40, color: green[50] }}/> 
-          
-          
-          Borrar pestañas 
-          </Button>
-          </Box>
-          <Box sx={{ flexGrow: 1 }}>
-            <Button auto color="success" onClick={toggleDrawer('right', true)} >
-              Ver Opciones
-            </Button>
-            <SwipeableDrawer
-              anchor='right'
-              open={state['right']}
-              onClose={toggleDrawer('right', false)}
-              onOpen={toggleDrawer('right', true)}
-            >
-              {list('left')}
-            </SwipeableDrawer>
+              <Button auto color="success" onClick={() => borrarALL()}>
+                < DeleteForeverIcon fontSize="large" sx={{ fontSize: 40, color: green[50] }} />
+
+
+                Borrar pestañas
+              </Button>
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
+              <Button auto color="success" onClick={toggleDrawer('right', true)} >
+                Ver Opciones
+              </Button>
+              <SwipeableDrawer
+                anchor='right'
+                open={state['right']}
+                onClose={toggleDrawer('right', false)}
+                onOpen={toggleDrawer('right', true)}
+              >
+                {list('left')}
+              </SwipeableDrawer>
             </Box>
           </Toolbar>
         </Container>
@@ -324,7 +325,7 @@ export const Bienvenida = () => {
       <Grid.Container gap={2} justify="flex-start">
 
         <Grid xs={1} sm={2} justify="center">
-     
+
         </Grid>
 
         <Grid xs={12} sm={12} justify="center">
@@ -354,18 +355,15 @@ export const Bienvenida = () => {
 
 
 
-
-
-
         <Grid xs={8} sm={2}>
         </Grid>
 
-        <Grid xs={8} sm={8.5}>
+        <Grid xs={8} sm={12}>
 
           <Box sx={{ width: '900%', typography: 'body1', padding: '10px', margin: 'auto' }}>
             <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: 'primary' ,color: green[800] }}>
-                <TabList  indicatorColor="success"  
+              <Box sx={{ borderBottom: 1, borderColor: 'primary', color: green[800] }}>
+                <TabList indicatorColor="success"
                   textColor="success" onChange={handleChange} aria-label="lab API tabs example">
 
                   {
@@ -376,8 +374,8 @@ export const Bienvenida = () => {
 
 
 
-                      <Tab textcolor="success" icon={< BookmarkRemoveIcon  onClick={() => borrar()} fontSize="large" sx={{ fontSize: 55, color: green[400] }}/>}
-                        indicatorColor="success" label={item.nombre} value={item.valor}    />
+                      <Tab textcolor="success" icon={< BookmarkRemoveIcon onClick={() => borrar()} fontSize="large" sx={{ fontSize: 55, color: green[700] }} />}
+                        indicatorColor="success" label={item.nombre} value={item.valor} />
 
 
 
@@ -401,24 +399,92 @@ export const Bienvenida = () => {
                     }}
                     weight="bold"
                   >
+                      <Skeleton animation="wave" />
                     Esoge la operacion que deseas realizar
                   </Text>
                   </Grid>       </Grid.Container> </TabPanel>
 
 
+              <TabPanel value="2" sx={{ color: green[800] }}>       
+              
+              
+                  <Text
+                h1
+                size={45}
+                css={{
+                  textGradient: "45deg, $green800 -20%, $green800 100%",
+                }}
+                weight="bold"
+              >
+                Subir Acta
+
+              </Text>
+                <Grid xs={6} sm={2} justify="center">  
+                
+                
+                 <Button auto ghost color="success" onClick={() => borrar()}>
+                  Borrar Pestaña
+                </Button></Grid>
 
 
 
-              <TabPanel value="2" sx={{ color: green[800] }}>         Constancia     <Grid xs={6} sm={2} justify="center">   <Button auto ghost color="success" onClick={() => borrar()}>
+              </TabPanel>
+              <TabPanel value="3">
+              
+              
+              
+                    <Grid xs={6} sm={8} justify="center"> 
+                    
+                    
+                    
+                    <Text
+                h1
+                size={45}
+                css={{
+                  textGradient: "45deg, $green800 -20%, $green800 100%",
+                }}
+                weight="bold"
+              >
+                Ver Acta
+
+              </Text>
+                    
+                    
+                     <Button auto ghost color="success" onClick={() => borrar()}>
+              
+              
+              Borrar Pestaña
+              
+              
+              
+              </Button>
+              
+              
+              
+              </Grid></TabPanel>
+              <TabPanel value="4">    
+              
+               <Grid xs={6} sm={8} justify="center"> 
+               
+               
+               
+                
+               <Text
+                h1
+                size={45}
+                css={{
+                  textGradient: "45deg, $green800 -20%, $green800 100%",
+                }}
+                weight="bold"
+              >
+                Generar Acta
+
+              </Text>
+               
+                <Button auto ghost color="success" onClick={() => borrar()}>
                 Borrar Pestaña
               </Button></Grid>
               </TabPanel>
-              <TabPanel value="3">Cambio de Carrera        <Grid xs={6} sm={2} justify="center">  <Button auto ghost color="success" onClick={() => borrar()}>
-                Borrar Pestaña
-              </Button></Grid></TabPanel>
-              <TabPanel value="4"> Carrer Simultanea        <Grid xs={6} sm={2} justify="center">  <Button auto ghost color="success" onClick={() => borrar()}>
-                Borrar Pestaña
-              </Button></Grid></TabPanel>
             </TabContext>
           </Box>
 
