@@ -33,12 +33,13 @@ export const AppRouter = () => {
 
                 <Route path="/" element={
                     <PublicRoute isAuthenticated={auth.logged}>
-                        <Rutas />
+                
                     </PublicRoute>
                 } />
                
                 <Route path="/auth/*" element={
                     <PrivateRoute isAuthenticated={auth.logged}>
+                 
                         <AuthRouter />
                     </PrivateRoute>
                 } />
