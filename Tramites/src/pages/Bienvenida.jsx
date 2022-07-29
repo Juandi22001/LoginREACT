@@ -69,6 +69,8 @@ export const Bienvenida = () => {
 
     }
     else{
+      setValue('1')
+
       setProductosFiltrados(pestaña)
 
     }
@@ -243,7 +245,7 @@ export const Bienvenida = () => {
 
                 </TabList>
               </Box>
-              <TabPanel value="1">......</TabPanel>
+              <TabPanel value="1">....Escoja lo que desea hacer....</TabPanel>
               <TabPanel value="2">         Constancia     <Grid xs={6} sm={2} justify="center">  <Button auto ghost sx={{ color: blue[900] }} onClick={() => borrar()}>
                 Borrar Pestaña
               </Button></Grid>

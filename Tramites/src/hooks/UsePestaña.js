@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import { avatarClasses } from "@mui/material";
 export const Pestaña = () => {
 
-    let localcart = JSON.parse(localStorage.getItem('pestaña') || '[{"nombre":"inicio" ,"valor":"0"}]');
+    let localcart = JSON.parse(localStorage.getItem('pestaña') || '[]');
     const [pestaña, setPestaña] = useState(localcart)
     const [CargandoPestaña, setCargandoPestaña] = useState(true)
 
