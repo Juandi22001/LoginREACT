@@ -34,7 +34,7 @@ export const useBienvenida = () => {
        
  
       
-    window.location.replace("http://localhost:3000");
+    window.location.replace("http://34.125.59.69:3000");
 
 
 
@@ -49,7 +49,7 @@ export const useBienvenida = () => {
        
  
       
-    window.location.replace("http://localhost:3003");
+    window.location.replace("https://main.d1fbb1b7j3rlrd.amplifyapp.com");
 
 
 
@@ -65,7 +65,7 @@ export const useBienvenida = () => {
        
  
       
-    window.location.replace("http://localhost:3002");
+    window.location.replace("https://main.d314nq50k5jl3w.amplifyapp.com");
 
 
 
@@ -80,7 +80,7 @@ export const useBienvenida = () => {
        
  
       
-    window.location.replace("http://localhost:3004");
+    window.location.replace("https://main.d3l3r65b2p5spd.amplifyapp.com");
 
 
 
@@ -96,7 +96,7 @@ export const useBienvenida = () => {
        
  
       
-    window.location.replace("http://localhost:3005");
+    window.location.replace("https://main.d1ht9rkwzsgdml.amplifyapp.com");
 
 
 
