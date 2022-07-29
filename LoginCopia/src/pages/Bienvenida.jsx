@@ -78,7 +78,6 @@ export const Bienvenida = () => {
   return (
 
     <div class="MenuPortal" >
-   
       <Barra></Barra>
       <Grid.Container gap={1} justify="flex-start">
      
