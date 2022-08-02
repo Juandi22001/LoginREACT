@@ -130,7 +130,7 @@ export const Bienvenida = () => {
             h1
             size={65}
             css={{
-              textGradient: "45deg, $blue900 -20%, $blue900 100%",
+              textGradient: "45deg, black -20%, black 100%",
             }}
             weight="bold"
           >

@@ -277,7 +277,7 @@ export const Bienvenida = () => {
             
             size={75}
             css={{
-              width: '900%',   textGradient: "45deg, $blue800 -20%, $blue900 100%",
+              width: '900%',   textGradient: "45deg, $green600 -20%, $green600 100%",
             }}
             weight="bold"
           >
@@ -337,8 +337,8 @@ export const Bienvenida = () => {
                     <>
                       <div class="center">
 
-                        <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
-                          Escoge el curso que deseas desasignarte
+                        <Text css={{ lineHeight: "$xs", color: "$blue600" }}>
+                          Escoge el curso que deseas asignarte
                         </Text>
                       </div>
                     </>
@@ -350,7 +350,7 @@ export const Bienvenida = () => {
                     <>
                       <div class="center">
 
-                        <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
+                        <Text css={{ lineHeight: "$xs", color: "$blue600" }}>
                           Escoge el laboratorio que deseas desasignarte
                         </Text>
                       </div>
@@ -364,7 +364,7 @@ export const Bienvenida = () => {
                     <>
                       <div class="center">
 
-                        <Text css={{ lineHeight: "$xs", color: "$blue800" }}>
+                        <Text css={{ lineHeight: "$xs", color: "$blue600" }}>
                           Haz  el pago  de todos tus prestamos pendientes
                         </Text>
                       </div>
